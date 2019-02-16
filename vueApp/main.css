@@ -1,0 +1,27 @@
+body{
+    padding: 25px 2em;
+}
+.container{
+    width: 100%
+}
+i{
+    text-align: center;
+}
+img{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+.left{
+    box-sizing: border-box;
+    width: 88%;
+    float: left;
+    margin-bottom: 2px;
+}
+.right{
+    box-sizing: border-box;
+    width: 11%;
+    margin-bottom: 3px;
+    margin-left:0.5%;
+    float: left;
+}

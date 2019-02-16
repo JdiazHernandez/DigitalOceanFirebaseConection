@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Digital Ocean/Firebase file control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="./Img/Favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="dropzone/dropzone.js"></script>
+    <script src="dropzone/vue2Dropzone.js"></script>
+    <link rel="stylesheet" href="dropzone/dropzone.css">
+    <link rel="stylesheet" href="dropzone/vue2Dropzone.min.css">
+
+</head>
+
+<body>
+    <div class="container is-fluid" id="app">
+        <p class="title is-4">Firebase / Digital Ocean file system</p>
+        <label for="client">Client ID:</label>
+        <input v-model="client" type="text"><br> 
+        
+        <button style="margin:2px" class="button is-warning" @click="retrieveSales">Search for: {{client}}</button><br>
+        <div class="table">
+        <ul >
+            <li v-for="url in urls" id="filelist" >
+                <a class='button is-link left' :href="'/vueApp/file/' + url">{{ url }}</a>
+                <a class="button is-link right" @click="deleteFile(url)"><i class="fa fa-trash"></i></a>
+               
+            </li>
+        </ul>
+    </div>
+        <p v-if="urls === [0]">No files</p>
+        <button style="margin:2px" class="button is-warning" @click="retrieveAll">Get all files</button>
+
+
+        <br />
+        <br />
+
+        <form  class="dropzone" method="POST" enctype="multipart/form-data" id="myAwesomeDropzone">
+
+        </form><br>
+
+        
+        <img src="./Img/DOFirebase.png" alt="Icon">
+    </div>
+
+</body>
+<script src="mainvue.js"></script>
+
+</html>
